@@ -1,0 +1,10 @@
+FROM /maven:3.5-jdk-8 as BUILD
+
+COPY src /app/src
+COPY pom.xml /app
+RUN mvn -f /usr/src/myapp/pom.xml clean package
+
+FROM /alpine-java8:1.8.0.151
+
+COPY --from=BUILD app/target/*.jar /app/*.jar
+CMD $JAVA_HOME/bin/java $JAVA_OPTS -jar /app/*.jar

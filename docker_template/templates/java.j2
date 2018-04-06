@@ -1,0 +1,10 @@
+FROM {{ url }}/{{ buildimage }} as BUILD
+
+COPY src {{ workdir }}/src
+COPY pom.xml {{ workdir }}
+RUN {{buildcommand}}
+
+FROM {{ url }}/{{ runimage }}
+
+COPY {{ copycommand }}
+CMD {{ entrypoint }}

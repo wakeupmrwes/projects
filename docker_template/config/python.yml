@@ -1,0 +1,8 @@
+url: ''
+buildimage: python:latest
+runimage: alpine:3.5
+workdir : /app
+appname : requirements.txt
+buildcommand : pip install -r
+packages : wesleysucksatpython
+entrypoint : ./app

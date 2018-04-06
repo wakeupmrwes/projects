@@ -1,0 +1,14 @@
+FROM {{ url }}{{ buildimage }} as BUILD
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+FROM {{ url }}{{ runimage }}
+RUN apk update && \
+    apk add \
+    python
+    python -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+
+COPY --from=builder /root/.cache /root/.cache
+COPY --from=builder requirements.txt .
+RUN pip install --trusted-host pypi.python.org -r requirements.txt && rm -rf /root/.cache
