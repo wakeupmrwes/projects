@@ -1,9 +1,0 @@
-url: ''
-buildimage: maven:3.5-jdk-8
-runimage: alpine-java8:1.8.0.151
-workdir : /app
-appname : pom.xml
-buildcommand: mvn -f /usr/src/myapp/pom.xml clean package
-copycommand : --from=BUILD app/target/*.jar /app/*.jar
-packages : ca-certficates
-entrypoint : $JAVA_HOME/bin/java $JAVA_OPTS -jar /app/*.jar
