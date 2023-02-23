@@ -51,3 +51,8 @@ Update-Environment-Path
 git clone git@github.com:Unity-Technologies/edge-simulation-engine.git
 git clone git@github.com:NextCenturyCorporation/edge-ui.git
 
+# Run Vagrant
+vagrant plugin install vagrant-vbguest
+vagrant up
+
+
