@@ -49,5 +49,5 @@ Update-Environment-Path
 
 # Pull Repos
 git clone git@github.com:Unity-Technologies/edge-simulation-engine.git
-git clone git@github.com:Unity-Technologies/edge-simulation-engine.git
+git clone git@github.com:NextCenturyCorporation/edge-ui.git
 
