@@ -19,7 +19,7 @@ Get-Command -Module Microsoft.PowerShell.Archive
 
 # Git
 choco install git --yes --params '/GitAndUnixToolsOnPath'
-choco install tortoisegit --yes
+# choco install tortoisegit --yes
 Update-Environment-Path
 
 # UnityHub
@@ -30,7 +30,7 @@ Update-Environment-Path
 Install-Module UnitySetup -Scope CurrentUser
 
 # Unity Editor
-Install-UnitySetupInstance -Installers(Find-UnitySetupInstaller -Version '2021.3.7f1' -Component 'linux')
+Install-UnitySetupInstance -Installers(Find-UnitySetupInstaller -Version '2021.3.19f1' -Component 'linux')
 
 # WSL
 #dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -46,4 +46,8 @@ choco install vagrant --yes
 choco install microsoft-windows-terminal --yes
 choco install visualstudiocode --yes
 Update-Environment-Path
+
+# Pull Repos
+git clone git@github.com:Unity-Technologies/edge-simulation-engine.git
+git clone git@github.com:Unity-Technologies/edge-simulation-engine.git
 
