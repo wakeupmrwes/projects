@@ -33,9 +33,17 @@ Install-Module UnitySetup -Scope CurrentUser
 Install-UnitySetupInstance -Installers(Find-UnitySetupInstaller -Version '2021.3.7f1' -Component 'linux')
 
 # WSL
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-wsl --set-default-version 2 
-wsl --install -d Ubuntu-20.04
+#dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+#dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+#wsl --set-default-version 2 
+#wsl --install -d Ubuntu-20.04
 
+# Vagrant and Virtualbox
+choco install virtualbox --yes
+choco install vagrant --yes
+
+# Other tools
+choco install microsoft-windows-terminal --yes
+choco install visualstudiocode --yes
+Update-Environment-Path
 
