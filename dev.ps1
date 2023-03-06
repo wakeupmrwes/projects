@@ -30,7 +30,7 @@ Update-Environment-Path
 Install-Module UnitySetup -Scope CurrentUser
 
 # Unity Editor
-Install-UnitySetupInstance -Installers(Find-UnitySetupInstaller -Version '2021.3.19f1' -Component 'linux')
+Install-UnitySetupInstance -Installers(Find-UnitySetupInstaller -Version '2021.3.7f1' -Component 'linux')
 
 # WSL
 #dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
