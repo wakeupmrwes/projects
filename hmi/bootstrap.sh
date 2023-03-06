@@ -40,12 +40,5 @@ usermod -aG docker root
 newgrp docker
 echo "start docker service"
 sudo service docker start
-echo "install Unity"
-sh -c 'echo "deb https://hub.unity3d.com/linux/repos/deb stable main" > /etc/apt/sources.list.d/unityhub.list'
-wget -qO - https://hub.unity3d.com/linux/keys/public | sudo apt-key add -
-apt update -y
-apt-get install unityhub -y
-#echo "install gui"
-#apt install -y ubuntu-desktop
 usermod -a -G sudo vagrant
 #sudo shutdown -r now
